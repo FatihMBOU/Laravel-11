@@ -42,6 +42,12 @@ class User extends Authenticatable
         {
           return  $this->HasOne();
         }
+
+        
+        public function experience()
+        {
+            return $this->HasOne(Experience::class);
+        }
     
 
        /**
