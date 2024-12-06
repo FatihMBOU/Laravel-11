@@ -48,7 +48,30 @@ class User extends Authenticatable
         {
             return $this->HasOne(Experience::class);
         }
+
+        public function posts()
+        {
+            return $this->HasMany(Post::class, 'person_id');
+
+        }
     
+        public function jobs()
+        {
+            return $this->HasMany(Job::class);
+
+        }
+    
+        public function tasks()
+        {
+            return $this->HasMany(Task::class);
+
+        }
+
+        public function achievements()
+        {
+            return $this->HasMany(Achievements::class);
+
+        }
 
        /**
      * Get the attributes that should be cast.
